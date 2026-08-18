@@ -1,0 +1,17 @@
+{
+  "name": "heart",
+  "version": "1.0.0",
+  "description": "A romantic, single-page love story website. Pure HTML + CSS + Vanilla JavaScript — no frameworks, no backend.",
+  "main": "index.js",
+  "scripts": {
+    "watch": "node watch.js",
+    "scan": "node watch.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "chokidar": "^5.0.0"
+  }
+}
