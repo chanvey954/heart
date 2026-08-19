@@ -411,7 +411,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCounter();
     initReveal();
     initActiveNav();
-    initMiniBook();
+    initStoryBook();
 });
 
 /* ============================================================
@@ -946,32 +946,26 @@ function initActiveNav() {
 }
 
 /* ============================================================
-   13. MINI LOVE BOOK (in Story section)
+   13. STORY BOOK (3D flipbook in Our Story section)
    ============================================================ */
-function initMiniBook() {
-    var book = document.getElementById('miniBook');
+function initStoryBook() {
+    var book = document.getElementById('storyBook');
     if (!book) return;
 
-    var pages = book.querySelectorAll('.mini-page');
+    var pages = book.querySelectorAll('.page');
     var current = 0;
-    var total = pages.length;
-
-    function showPage(index) {
-        pages.forEach(function(p) { p.classList.remove('mini-page-active'); });
-        if (pages[index]) pages[index].classList.add('mini-page-active');
-    }
 
     function flipNext() {
-        if (current < total - 1) {
+        if (current < pages.length) {
+            pages[current].classList.add('flipped');
             current++;
-            showPage(current);
         }
     }
 
     function flipPrev() {
         if (current > 0) {
             current--;
-            showPage(current);
+            pages[current].classList.remove('flipped');
         }
     }
 
