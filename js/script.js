@@ -958,10 +958,22 @@ function initStoryBook() {
     var counterEl = document.getElementById('bookCounter');
     var clickLeft = document.getElementById('bookClickLeft');
     var clickRight = document.getElementById('bookClickRight');
+    var prevBtn = document.getElementById('bookPrev');
+    var nextBtn = document.getElementById('bookNext');
 
     function updateCounter() {
         if (counterEl) {
             counterEl.textContent = (current + 1) + ' / ' + total;
+        }
+        if (prevBtn) {
+            prevBtn.disabled = current === 0;
+            prevBtn.style.opacity = current === 0 ? '0.35' : '';
+            prevBtn.style.pointerEvents = current === 0 ? 'none' : '';
+        }
+        if (nextBtn) {
+            nextBtn.disabled = current >= total - 1;
+            nextBtn.style.opacity = current >= total - 1 ? '0.35' : '';
+            nextBtn.style.pointerEvents = current >= total - 1 ? 'none' : '';
         }
     }
 
@@ -984,9 +996,13 @@ function initStoryBook() {
         }
     }
 
-    // Click zones
+    // Click zones (book halves)
     if (clickLeft) clickLeft.addEventListener('click', function(e) { e.preventDefault(); flipPrev(); });
     if (clickRight) clickRight.addEventListener('click', function(e) { e.preventDefault(); flipNext(); });
+
+    // Navigation buttons
+    if (prevBtn) prevBtn.addEventListener('click', function(e) { e.preventDefault(); flipPrev(); });
+    if (nextBtn) nextBtn.addEventListener('click', function(e) { e.preventDefault(); flipNext(); });
 
     // Keyboard
     document.addEventListener('keydown', function(e) {
@@ -1011,27 +1027,6 @@ function initStoryBook() {
             diff > 0 ? flipNext() : flipPrev();
         }
     }, { passive: true });
-
-    // Envelope click-to-open (Page 8)
-    var envelope = document.getElementById('envelope');
-    var letter = document.getElementById('letter');
-    if (envelope && letter) {
-        var openEnvelope = function() {
-            if (envelope.classList.contains('is-open')) return;
-            envelope.classList.add('is-open');
-            letter.classList.add('is-open');
-        };
-        envelope.addEventListener('click', function(e) {
-            e.stopPropagation();
-            openEnvelope();
-        });
-        envelope.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                openEnvelope();
-            }
-        });
-    }
 
     updateCounter();
 }

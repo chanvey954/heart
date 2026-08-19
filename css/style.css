@@ -1875,6 +1875,28 @@ body.no-scroll {
     letter-spacing: 0.02em;
 }
 
+.book-wrap .book-nav-btn {
+    background: none;
+    border: 1px solid rgba(232, 136, 160, 0.3);
+    color: var(--primary-deep);
+    font-family: inherit;
+    font-size: 0.85rem;
+    padding: 6px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.book-wrap .book-nav-btn:hover {
+    background: rgba(232, 136, 160, 0.15);
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.book-wrap .book-nav-btn:active {
+    transform: scale(0.96);
+}
+
 .book-wrap .book-counter {
     font-weight: 600;
     color: var(--primary-deep);
