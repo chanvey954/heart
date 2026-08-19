@@ -687,31 +687,206 @@ body {
 }
 
 /* ---------- 18. RESPONSIVE ---------- */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .book {
-        width: 320px;
-        height: 460px;
-    }
-    
-    .book::before {
-        width: 10px;
-        left: -10px;
+        width: 340px;
+        height: 470px;
     }
     
     .page-content {
-        padding: 30px 25px;
+        padding: 28px 24px;
     }
     
     .cover-title {
-        font-size: 2.4rem;
+        font-size: 2.2rem;
     }
     
     .page-heading {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .book-container {
+        perspective: none;
+        margin: 15px 0;
     }
     
-    .page-title {
+    .book-container::before {
+        display: none;
+    }
+
+    .book {
+        width: 280px;
+        height: 400px;
+        transform: none;
+        transform-style: flat;
+    }
+    
+    .book::before,
+    .book::after {
+        display: none;
+    }
+
+    .page {
+        transform: none;
+        transform-style: flat;
+        transition: opacity 0.4s ease;
+    }
+    
+    .page:hover:not(.flipped) {
+        transform: none;
+    }
+
+    .page.flipped {
+        transform: none;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .page-content {
+        padding: 20px 18px;
+    }
+
+    .cover-title {
+        font-size: 1.8rem;
+    }
+
+    .cover-hearts {
+        font-size: 1.8rem;
+        margin-bottom: 6px;
+    }
+
+    .cover-divider {
+        width: 50px;
+        margin: 10px 0;
+    }
+
+    .cover-date {
+        font-size: 0.8rem;
+    }
+
+    .cover-hearts-bottom {
         font-size: 1.4rem;
+        margin-top: 10px;
+    }
+
+    .page-heading {
+        font-size: 1.3rem;
+    }
+
+    .page-text {
+        font-size: 0.76rem;
+        line-height: 1.5;
+        margin-bottom: 3px;
+    }
+
+    .page-emoji {
+        font-size: 1.5rem;
+        margin-bottom: 4px;
+    }
+
+    .page-divider {
+        margin: 4px 0;
+    }
+
+    .page-subtitle {
+        font-size: 0.7rem;
+    }
+
+    .page-quote {
+        padding: 6px 10px;
+        font-size: 0.72rem;
+        margin-top: 6px;
+    }
+
+    .page-signature {
+        font-size: 0.9rem;
+        margin-top: 6px;
+    }
+
+    .page-footer {
+        font-size: 0.65rem;
+    }
+
+    .ending-hearts {
+        font-size: 1.6rem;
+        margin-bottom: 6px;
+    }
+
+    .ending-title {
+        font-size: 1.4rem;
+        margin-bottom: 4px;
+    }
+
+    .ending-divider {
+        width: 40px;
+        margin: 6px 0;
+    }
+
+    .ending-text {
+        font-size: 0.74rem;
+        line-height: 1.5;
+        margin-bottom: 3px;
+    }
+
+    .ending-names {
+        margin-top: 8px;
+        gap: 8px;
+    }
+
+    .ending-name {
+        font-size: 1.1rem;
+    }
+
+    .ending-heart {
+        font-size: 1rem;
+    }
+
+    .ending-forever {
+        font-size: 1.6rem;
+        margin-top: 8px;
+    }
+
+    .final-heart {
+        font-size: 2rem;
+        margin-bottom: 8px;
+    }
+
+    .final-text {
+        font-size: 1.2rem;
+        margin-bottom: 6px;
+    }
+
+    .final-subtext {
+        font-size: 0.8rem;
+    }
+
+    .page-title {
+        font-size: 1rem;
+    }
+
+    .book-nav {
+        gap: 0.6rem;
+        margin-top: 0.8rem;
+    }
+
+    .book-nav-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.82rem;
+    }
+
+    .book-nav-counter {
+        font-size: 0.78rem;
+    }
+
+    .back-link {
+        font-size: 0.82rem;
+        padding: 8px 14px;
+    }
+
+    .header {
+        padding: 14px 16px;
     }
 }
 
