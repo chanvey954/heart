@@ -411,6 +411,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCounter();
     initReveal();
     initActiveNav();
+    initMiniBook();
 });
 
 /* ============================================================
@@ -942,4 +943,61 @@ function initActiveNav() {
     }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
 
     sections.forEach((section) => observer.observe(section));
+}
+
+/* ============================================================
+   13. MINI LOVE BOOK (in Story section)
+   ============================================================ */
+function initMiniBook() {
+    const book = document.getElementById('miniBook');
+    if (!book) return;
+
+    const pages = book.querySelectorAll('.mini-page');
+    let current = 0;
+
+    function flipNext() {
+        if (current < pages.length) {
+            pages[current].classList.add('flipped');
+            current++;
+        }
+    }
+
+    function flipPrev() {
+        if (current > 0) {
+            current--;
+            pages[current].classList.remove('flipped');
+        }
+    }
+
+    book.addEventListener('click', (e) => {
+        const rect = book.getBoundingClientRect();
+        if (e.clientX - rect.left < rect.width / 2) {
+            flipPrev();
+        } else {
+            flipNext();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (!book.closest('.section--story')) return;
+        if (e.key === 'ArrowRight' || e.key === ' ') {
+            e.preventDefault();
+            flipNext();
+        } else if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            flipPrev();
+        }
+    });
+
+    let touchX = 0;
+    book.addEventListener('touchstart', (e) => {
+        touchX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    book.addEventListener('touchend', (e) => {
+        const diff = touchX - e.changedTouches[0].screenX;
+        if (Math.abs(diff) > 40) {
+            diff > 0 ? flipNext() : flipPrev();
+        }
+    }, { passive: true });
 }
