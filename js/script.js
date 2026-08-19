@@ -950,7 +950,9 @@ function initActiveNav() {
    ============================================================ */
 function initMiniBook() {
     const book = document.getElementById('miniBook');
-    if (!book) return;
+    const leftBtn = document.getElementById('miniClickLeft');
+    const rightBtn = document.getElementById('miniClickRight');
+    if (!book || !leftBtn || !rightBtn) return;
 
     const pages = book.querySelectorAll('.mini-page');
     let current = 0;
@@ -969,16 +971,16 @@ function initMiniBook() {
         }
     }
 
-    book.addEventListener('click', function(e) {
+    rightBtn.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
-        const rect = book.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        if (x < rect.width / 2) {
-            flipPrev();
-        } else {
-            flipNext();
-        }
+        flipNext();
+    });
+
+    leftBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        flipPrev();
     });
 
     document.addEventListener('keydown', function(e) {

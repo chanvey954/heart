@@ -718,6 +718,24 @@ button {
     user-select: none;
 }
 
+.mini-click-left,
+.mini-click-right {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.mini-click-left {
+    left: 0;
+}
+
+.mini-click-right {
+    right: 0;
+}
+
 /* Mini book spine */
 .mini-book::before {
     content: '';
