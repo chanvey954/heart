@@ -1012,5 +1012,26 @@ function initStoryBook() {
         }
     }, { passive: true });
 
+    // Envelope click-to-open (Page 8)
+    var envelope = document.getElementById('envelope');
+    var letter = document.getElementById('letter');
+    if (envelope && letter) {
+        var openEnvelope = function() {
+            if (envelope.classList.contains('is-open')) return;
+            envelope.classList.add('is-open');
+            letter.classList.add('is-open');
+        };
+        envelope.addEventListener('click', function(e) {
+            e.stopPropagation();
+            openEnvelope();
+        });
+        envelope.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openEnvelope();
+            }
+        });
+    }
+
     updateCounter();
 }
