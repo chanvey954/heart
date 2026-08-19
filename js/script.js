@@ -949,38 +949,41 @@ function initActiveNav() {
    13. MINI LOVE BOOK (in Story section)
    ============================================================ */
 function initMiniBook() {
-    const book = document.getElementById('miniBook');
-    const leftBtn = document.getElementById('miniClickLeft');
-    const rightBtn = document.getElementById('miniClickRight');
-    if (!book || !leftBtn || !rightBtn) return;
+    var book = document.getElementById('miniBook');
+    if (!book) return;
 
-    const pages = book.querySelectorAll('.mini-page');
-    let current = 0;
+    var pages = book.querySelectorAll('.mini-page');
+    var current = 0;
+    var total = pages.length;
+
+    function showPage(index) {
+        pages.forEach(function(p) { p.classList.remove('mini-page-active'); });
+        if (pages[index]) pages[index].classList.add('mini-page-active');
+    }
 
     function flipNext() {
-        if (current < pages.length) {
-            pages[current].classList.add('flipped');
+        if (current < total - 1) {
             current++;
+            showPage(current);
         }
     }
 
     function flipPrev() {
         if (current > 0) {
             current--;
-            pages[current].classList.remove('flipped');
+            showPage(current);
         }
     }
 
-    rightBtn.addEventListener('click', function(e) {
+    book.addEventListener('click', function(e) {
         e.preventDefault();
-        e.stopPropagation();
-        flipNext();
-    });
-
-    leftBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        flipPrev();
+        var rect = book.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        if (x < rect.width / 2) {
+            flipPrev();
+        } else {
+            flipNext();
+        }
     });
 
     document.addEventListener('keydown', function(e) {
