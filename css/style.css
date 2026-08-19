@@ -1540,6 +1540,7 @@ body.no-scroll {
     transform: scale(0.95);
     transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s 0.5s;
     z-index: 1;
+    pointer-events: none;
 }
 
 .book-wrap .book-page-active {
@@ -1548,6 +1549,7 @@ body.no-scroll {
     transform: scale(1);
     transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s 0s;
     z-index: 10;
+    pointer-events: none;
 }
 
 .book-wrap .book-front {
@@ -1834,9 +1836,41 @@ body.no-scroll {
 
 .book-wrap .book-hint {
     margin-top: 18px;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: var(--text-faint);
-    opacity: 0.7;
+    opacity: 0.8;
+    letter-spacing: 0.02em;
+}
+
+.book-wrap .book-counter {
+    font-weight: 600;
+    color: var(--primary-deep);
+    font-size: 0.9rem;
+}
+
+/* Left/right click zones */
+.book-wrap .book-click-left,
+.book-wrap .book-click-right {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 20;
+    cursor: pointer;
+}
+
+.book-wrap .book-click-left {
+    left: 0;
+    cursor: w-resize;
+}
+
+.book-wrap .book-click-right {
+    right: 0;
+    cursor: e-resize;
+}
+
+.book-wrap .book-page-active {
+    pointer-events: none;
 }
 
 @keyframes pulse {

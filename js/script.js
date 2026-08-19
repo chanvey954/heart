@@ -954,37 +954,41 @@ function initStoryBook() {
 
     var pages = book.querySelectorAll('.book-page');
     var current = 0;
+    var total = pages.length;
+    var counterEl = document.getElementById('bookCounter');
+    var clickLeft = document.getElementById('bookClickLeft');
+    var clickRight = document.getElementById('bookClickRight');
+
+    function updateCounter() {
+        if (counterEl) {
+            counterEl.textContent = (current + 1) + ' / ' + total;
+        }
+    }
 
     function showPage(index) {
         pages.forEach(function(p) { p.classList.remove('book-page-active'); });
         if (pages[index]) pages[index].classList.add('book-page-active');
+        current = index;
+        updateCounter();
     }
 
     function flipNext() {
-        if (current < pages.length - 1) {
-            current++;
-            showPage(current);
+        if (current < total - 1) {
+            showPage(current + 1);
         }
     }
 
     function flipPrev() {
         if (current > 0) {
-            current--;
-            showPage(current);
+            showPage(current - 1);
         }
     }
 
-    book.addEventListener('click', function(e) {
-        e.preventDefault();
-        var rect = book.getBoundingClientRect();
-        var x = e.clientX - rect.left;
-        if (x < rect.width / 2) {
-            flipPrev();
-        } else {
-            flipNext();
-        }
-    });
+    // Click zones
+    if (clickLeft) clickLeft.addEventListener('click', function(e) { e.preventDefault(); flipPrev(); });
+    if (clickRight) clickRight.addEventListener('click', function(e) { e.preventDefault(); flipNext(); });
 
+    // Keyboard
     document.addEventListener('keydown', function(e) {
         if (e.key === 'ArrowRight' || e.key === ' ') {
             e.preventDefault();
@@ -995,6 +999,7 @@ function initStoryBook() {
         }
     });
 
+    // Touch swipe
     var touchX = 0;
     book.addEventListener('touchstart', function(e) {
         touchX = e.changedTouches[0].screenX;
@@ -1006,4 +1011,6 @@ function initStoryBook() {
             diff > 0 ? flipNext() : flipPrev();
         }
     }, { passive: true });
+
+    updateCounter();
 }
