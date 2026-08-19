@@ -6,51 +6,41 @@ const IMAGES_DIR = path.join(__dirname, 'assets', 'images');
 const SCRIPT_FILE = path.join(__dirname, 'js', 'script.js');
 const IMAGE_EXTS = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.bmp', '.svg'];
 
-/* ---------- Khmer helpers ---------- */
-const KHMER_DIGITS = ['០','១','២','៣','៥','៦','៧','៨','៩'];
-const KHMER_MONTHS = [
-    'មករា','កុម្ភៈ','មីនា','មេសា','ឧសភា','មិថុនា',
-    'កក្កដា','សីហា','កញ្ញា','តុលា','វិច្ឆិកា','ធ្នូ'
-];
+/* ---------- Date helpers ---------- */
 
-function toKhmerNum(n) {
-    return String(n).split('').map(d => KHMER_DIGITS[parseInt(d)] || d).join('');
-}
-
-function getKhmerDate() {
+function getEnglishDate() {
     const now = new Date();
-    const y = toKhmerNum(now.getFullYear());
-    const m = KHMER_MONTHS[now.getMonth()];
-    return `${y} · ${m}`;
+    const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    return `${months[now.getMonth()]} ${now.getFullYear()}`;
 }
 
 /* ---------- Caption/note generators ---------- */
 const CAPTIONS = [
-    'អនុស្សាវរីយ៍ថ្មី 💕',
-    'រូបភាពដ៏ស្រស់ស្អាត ❤️',
-    'ពេលវេលាដ៏មានតម្លៃ 💝',
-    'ថ្ងៃដ៏ពិសេស 💖',
-    'ស្នេហ៍ដ៏ស្រស់ស្អាត 🌸',
-    'អនុស្សាវរីយ៍ដ៏មានន័យ 💗',
-    'ជាមួយអូនគ្រប់ពេល 💞',
-    'ស្នាមញញឹមដ៏ស្រស់ស្អាត 😊',
-    'ថ្ងៃដ៏រីករាយ ☀️',
-    'សុបិនដ៏ស្រស់ស្អាត 🌙',
-    'ដំណើរជាមួយអូន 🌿',
-    'ក្តីស្រឡាញ់គ្មានដែនកំណត់ 🌹',
+    'New Memory 💕',
+    'Beautiful Photo ❤️',
+    'Precious Time 💝',
+    'Special Day 💖',
+    'Beautiful Love 🌸',
+    'Meaningful Memory 💗',
+    'With You Always 💞',
+    'Beautiful Smile 😊',
+    'Joyful Day ☀️',
+    'Beautiful Dream 🌙',
+    'Journey With You 🌿',
+    'Limitless Love 🌹',
 ];
 
 const NOTES = [
-    'អនុស្សាវរីយ៍ដែលខ្ញុំស្រឡាញ់។',
-    'ពេលវេលាដែលយើងចែករំលែក។',
-    'រឿងរបស់យើងកំពុងលូតលាស់។',
-    'ថ្ងៃនេះពិតជាពិសេសសម្រាប់យើង។',
-    'អនុស្សាវរីយ៍ដែលខ្ញុំមិនភ្លេច។',
-    'ស្រឡាញ់អូនគ្មានដែនកំណត់។',
-    'រាល់ពេលវេលាជាមួយអូនគឺជាអំណោយដ៏ពិសេស។',
-    'ថ្ងៃនេះភ្លឺដូចស្នាមញញឹមរបស់អូន។',
-    'យើងបានចំណាយពេលវេលាដ៏ស្រស់ស្អាតជាមួយគ្នា។',
-    'អនុស្សាវរីយ៍ដែលយើងរក្សាទុក។',
+    'A memory I love.',
+    'Time that we share.',
+    'Our story is growing.',
+    'Today is truly special for us.',
+    'A memory I will never forget.',
+    'My love for you knows no bounds.',
+    'Every moment with you is a special gift.',
+    'Today is bright like your smile.',
+    'We spent beautiful time together.',
+    'A memory we treasure.',
 ];
 
 function pick(arr) {
@@ -81,7 +71,7 @@ function getNextIndex(content) {
 }
 
 function buildEntry(filePath) {
-    const date = getKhmerDate();
+    const date = getEnglishDate();
     const caption = pick(CAPTIONS);
     const note = pick(NOTES);
     return [

@@ -16,373 +16,373 @@ const loveConfig = {
 
     /* ---------- Hero text ---------- */
     heroSubtitle: 'Our Little Love Story',
-    heroMessage: 'រាល់ពេលវេលាជាមួយអូនគឺជាអនុស្សាវរីយ៍ដ៏ស្រស់ស្អាត។',
+    heroMessage: 'Every moment with you is a beautiful memory.',
 
     /* ---------- Story ---------- */
-    storyMessage: 'មនុស្សខ្លះចូលមកក្នុងជីវិតយើង ហើយស្ងប់ស្ងាត់ក្លាយជាផ្នែកដែលយើងចូលចិត្តបំផុតនៃរាល់ថ្ងៃ។',
+    storyMessage: 'Some people enter our lives and quietly become the favorite part of every day.',
 
     /* ---------- Gallery (image paths, date, title, note) ---------- */
     memories: [
         {
             image: 'assets/images/couple1.png',
-            date: '២០២៥ · អនុស្សាវរីយ៍',
-            caption: 'អនុស្សាវរីយ៍ដ៏ពិសេស 💝',
-            note: 'ពេលវេលាដ៏មានតម្លៃជាមួយអូន។'
+            date: '2025 · Memory',
+            caption: 'Special Memory 💝',
+            note: 'Precious time with you.'
         },
         {
             image: 'assets/images/image1.png',
-            date: '២០២៥ · រូបភាពទី ១',
-            caption: 'រូបភាពដំបូង ❤️',
-            note: 'រូបភាពដំបូងរបស់យើង។'
+            date: '2025 · Photo 1',
+            caption: 'First Photo ❤️',
+            note: 'Our first photo together.'
         },
         {
             image: 'assets/images/image2.png',
-            date: '២០២៥ · រូបភាពទី ២',
-            caption: 'អនុស្សាវរីយ៍ថ្មី 🌸',
-            note: 'រឿងរបស់យើងកំពុងចាប់ផ្តើម។'
+            date: '2025 · Photo 2',
+            caption: 'New Memory 🌸',
+            note: 'Our story is beginning.'
         },
         {
             image: 'assets/images/image3.png',
-            date: '២០២៥ · រូបភាពទី ៣',
-            caption: 'ថ្ងៃដ៏ស្រស់ស្អាត 💕',
-            note: 'ថ្ងៃនេះពិតជាពិសេស។'
+            date: '2025 · Photo 3',
+            caption: 'Beautiful Day 💕',
+            note: 'Today is truly special.'
         },
         {
             image: 'assets/images/image5.png',
-            date: '២០២៥ · រូបភាពទី ៥',
-            caption: 'ពេលវេលាដ៏មានតម្លៃ 💖',
-            note: 'យើងបានចំណាយពេលវេលាដ៏ស្រស់ស្អាតជាមួយគ្នា។'
+            date: '2025 · Photo 5',
+            caption: 'Precious Time 💖',
+            note: 'We spent beautiful time together.'
         },
         {
             image: 'assets/images/image6.png',
-            date: '២០២៥ · រូបភាពទី ៦',
-            caption: 'ដំណើរជាមួយគ្នា 🌿',
-            note: 'ដំណើររបស់យើងកំពុងបន្ត។'
+            date: '2025 · Photo 6',
+            caption: 'Journey Together 🌿',
+            note: 'Our journey continues.'
         },
         {
             image: 'assets/images/image7.png',
-            date: '២០២៥ · រូបភាពទី ៧',
-            caption: 'អនុស្សាវរីយ៍ដ៏ស្រស់ស្អាត 💝',
-            note: 'អនុស្សាវរីយ៍ដែលខ្ញុំស្រឡាញ់។'
+            date: '2025 · Photo 7',
+            caption: 'Beautiful Memory 💝',
+            note: 'A memory I love.'
         },
         {
             image: 'assets/images/image8.png',
-            date: '២០២៥ · រូបភាពទី ៨',
-            caption: 'សុបិនដ៏ស្រស់ស្អាត 🌙',
-            note: 'សុបិនរបស់ខ្ញុំពេញដោយអូន។'
+            date: '2025 · Photo 8',
+            caption: 'Beautiful Dream 🌙',
+            note: 'My dream is full of you.'
         },
         {
             image: 'assets/images/image9.png',
-            date: '២០២៥ · រូបភាពទី ៩',
-            caption: 'ស្នាមញញឹមរបស់អូន ☀️',
-            note: 'ស្នាមញញឹមរបស់អូនធ្វើឱ្យថ្ងៃរបស់ខ្ញុំភ្លឺ។'
+            date: '2025 · Photo 9',
+            caption: 'Your Smile ☀️',
+            note: 'Your smile lights up my day.'
         },
         {
             image: 'assets/images/image10.png',
-            date: '២០២៥ · រូបភាពទី ១០',
-            caption: 'ក្តីស្រឡាញ់គ្មានដែនកំណត់ 🌹',
-            note: 'ស្រឡាញ់អូនគ្មានដែនកំណត់។'
+            date: '2025 · Photo 10',
+            caption: 'Limitless Love 🌹',
+            note: 'My love for you knows no bounds.'
         },
         {
             image: 'assets/images/image11.png',
-            date: '២០២៥ · រូបភាពទី ១១',
-            caption: 'ជាមួយអូនគ្រប់ពេល 💞',
-            note: 'រាល់ពេលវេលាជាមួយអូនគឺជាអនុស្សាវរីយ៍ដ៏មានតម្លៃ។'
+            date: '2025 · Photo 11',
+            caption: 'With You Always 💞',
+            note: 'Every moment with you is a precious memory.'
         },
         {
             image: 'assets/images/image12.png',
-            date: '២០២៥ · រូបភាពទី ១២',
-            caption: 'ថ្ងៃដ៏មានន័យ 💫',
-            note: 'ថ្ងៃនេះពិតជាមានន័យសម្រាប់ខ្ញុំ។'
+            date: '2025 · Photo 12',
+            caption: 'Meaningful Day 💫',
+            note: 'Today is truly meaningful to me.'
         },
         {
             image: 'assets/images/image13.png',
-            date: '២០២៥ · រូបភាពទី ១៣',
-            caption: 'អនុស្សាវរីយ៍ថ្មី 💕',
-            note: 'អនុស្សាវរីយ៍ថ្មីជាមួយអូន។'
+            date: '2025 · Photo 13',
+            caption: 'New Memory 💕',
+            note: 'A new memory with you.'
         },
         {
             image: 'assets/images/image14.png',
-            date: '២០២៥ · រូបភាពទី ១៤',
-            caption: 'ពេលវេលាដ៏ពិសេស 💝',
-            note: 'ពេលវេលាដែលយើងចែករំលែក។'
+            date: '2025 · Photo 14',
+            caption: 'Special Time 💝',
+            note: 'Time that we share.'
         },
         {
             image: 'assets/images/image15.png',
-            date: '២០២៥ · រូបភាពទី ១៥',
-            caption: 'ដំណើរក្រើបរបស់យើង 🌸',
-            note: 'ដំណើររបស់យើងពិតជាស្រស់ស្អាត។'
+            date: '2025 · Photo 15',
+            caption: 'Our Exciting Journey 🌸',
+            note: 'Our journey is truly beautiful.'
         },
         {
             image: 'assets/images/image16.png',
-            date: '២០២៥ · រូបភាពទី ១៦',
-            caption: 'ស្នេហ៍ដ៏ស្រស់ស្អាត 💗',
-            note: 'ស្នេហ៍របស់យើងដូចផ្កាយ។'
+            date: '2025 · Photo 16',
+            caption: 'Beautiful Love 💗',
+            note: 'Our love is like the stars.'
         },
         {
             image: 'assets/images/image17.png',
-            date: '២០២៥ · រូបភាពទី ១៧',
-            caption: 'ថ្ងៃដ៏ភ្លឺស្វាង ☀️',
-            note: 'ថ្ងៃនេះភ្លឺដូចស្នាមញញឹមរបស់អូន។'
+            date: '2025 · Photo 17',
+            caption: 'Bright Day ☀️',
+            note: 'Today is bright like your smile.'
         },
         {
             image: 'assets/images/image18.png',
-            date: '២០២៥ · រូបភាពទី ១៨',
-            caption: 'អនុស្សាវរីយ៍ដ៏មានតម្លៃ 💖',
-            note: 'អនុស្សាវរីយ៍ដែលខ្ញុំមិនភ្លេច។'
+            date: '2025 · Photo 18',
+            caption: 'Precious Memory 💖',
+            note: 'A memory I will never forget.'
         },
         {
             image: 'assets/images/image19.png',
-            date: '២០២៥ · រូបភាពទី ១៩',
-            caption: 'ពេលវេលាដ៏រីករាយ 💞',
-            note: 'ពេលវេលាជាមួយអូនគឺរីករាយ។'
+            date: '2025 · Photo 19',
+            caption: 'Joyful Time 💞',
+            note: 'Time with you is joyful.'
         },
         {
             image: 'assets/images/image20.png',
-            date: '២០២៥ · រូបភាពទី ២០',
-            caption: 'ស្នេហ៍គ្មានដែនកំណត់ 🌹',
-            note: 'ស្នេហ៍របស់យើងគ្មានដែនកំណត់។'
+            date: '2025 · Photo 20',
+            caption: 'Boundless Love 🌹',
+            note: 'Our love has no limits.'
         },
         {
             image: 'assets/images/image21.png',
-            date: '២០២៥ · រូបភាពទី ២១',
-            caption: 'ថ្ងៃដ៏ពិសេស 💝',
-            note: 'ថ្ងៃនេះពិតជាពិសេសសម្រាប់យើង។'
+            date: '2025 · Photo 21',
+            caption: 'Special Day 💝',
+            note: 'Today is truly special for us.'
         },
         {
             image: 'assets/images/image23.png',
-            date: '២០២៥ · រូបភាពទី ២៣',
-            caption: 'អនុស្សាវរីយ៍ដ៏ស្រស់ស្អាត 💕',
-            note: 'អនុស្សាវរីយ៍ដែលយើងរក្សាទុក។'
+            date: '2025 · Photo 23',
+            caption: 'Beautiful Memory 💕',
+            note: 'A memory we treasure.'
         },
         {
             image: 'assets/images/image24.png',
-            date: '២០២៥ · រូបភាពទី ២៤',
-            caption: 'ដំណើរជាមួយអូន 🌿',
-            note: 'ដំណើររបស់យើងមិនឈប់ឡើយ។'
+            date: '2025 · Photo 24',
+            caption: 'Journey With You 🌿',
+            note: 'Our journey never stops.'
         },
         {
             image: 'assets/images/image25.png',
-            date: '២០២៥ · រូបភាពទី ២៥',
-            caption: 'ស្នាមញញឹមដ៏ស្រស់ស្អាត 😊',
-            note: 'ស្នាមញញឹមរបស់អូនធ្វើឱ្យខ្ញុំសប្បាយចិត្ត។'
+            date: '2025 · Photo 25',
+            caption: 'Beautiful Smile 😊',
+            note: 'Your smile makes me happy.'
         },
         {
             image: 'assets/images/image26.png',
-            date: '២០២៥ · រូបភាពទី ២៦',
-            caption: 'ពេលវេលាដ៏រីករាយ 💗',
-            note: 'ពេលវេលាដែលយើងចូលចិត្តបំផុត។'
+            date: '2025 · Photo 26',
+            caption: 'Joyful Time 💗',
+            note: 'Time we love the most.'
         },
         {
             image: 'assets/images/image27.png',
-            date: '២០២៥ · រូបភាពទី ២៧',
-            caption: 'អនុស្សាវរីយ៍ដ៏មានន័យ 💖',
-            note: 'អនុស្សាវរីយ៍ដែលមានន័យសម្រាប់យើង។'
+            date: '2025 · Photo 27',
+            caption: 'Meaningful Memory 💖',
+            note: 'A memory that means so much to us.'
         },
         {
             image: 'assets/images/image28.png',
-            date: '២០២៥ · រូបភាពទី ២៨',
-            caption: 'ស្នេហ៍ដ៏ពិតប្រាកដ 💝',
-            note: 'ស្នេហ៍របស់យើងពិតជាពិសេស។'
+            date: '2025 · Photo 28',
+            caption: 'True Love 💝',
+            note: 'Our love is truly special.'
         },
         {
             image: 'assets/images/image29.png',
-            date: '២០២៥ · រូបភាពទី ២៩',
-            caption: 'ថ្ងៃដ៏ស្រស់ស្អាត 🌸',
-            note: 'ថ្ងៃនេះស្រស់ស្អាតដូចអូន។'
+            date: '2025 · Photo 29',
+            caption: 'Beautiful Day 🌸',
+            note: 'Today is beautiful like you.'
         },
         {
             image: 'assets/images/image30.png',
-            date: '២០២៥ · រូបភាពទី ៣០',
-            caption: 'អនុស្សាវរីយ៍ចុងក្រោយ 💕',
-            note: 'អនុស្សាវរីយ៍ដែលយើងរក្សាទុកជារៀងរហូត។'
+            date: '2025 · Photo 30',
+            caption: 'Last Memory 💕',
+            note: 'A memory we keep forever.'
         },
         {
             image: 'assets/images/image31.png',
-            date: 'ថ្មី · image31',
-            caption: 'រូបភាពថ្មី ❤️',
-            note: 'រូបភាពដែលទើបបន្ថែម។'
+            date: 'New · image31',
+            caption: 'New Photo ❤️',
+            note: 'Recently added photo.'
         },
         {
             image: 'assets/images/image32.png',
-            date: 'ថ្មី · image32',
-            caption: 'រូបភាពថ្មី ❤️',
-            note: 'រូបភាពដែលទើបបន្ថែម។'
+            date: 'New · image32',
+            caption: 'New Photo ❤️',
+            note: 'Recently added photo.'
         },
         {
             image: 'assets/images/image33.png',
-            date: 'ថ្មី · image33',
-            caption: 'រូបភាពថ្មី ❤️',
-            note: 'រូបភាពដែលទើបបន្ថែម។'
+            date: 'New · image33',
+            caption: 'New Photo ❤️',
+            note: 'Recently added photo.'
         },
         {
             image: 'assets/images/image34.png',
-            date: 'ថ្មី · image34',
-            caption: 'រូបភាពថ្មី ❤️',
-            note: 'រូបភាពដែលទើបបន្ថែម។'
+            date: 'New · image34',
+            caption: 'New Photo ❤️',
+            note: 'Recently added photo.'
         },
         {
             image: 'assets/images/image35.png',
-            date: 'ថ្មី · image35',
-            caption: 'រូបភាពថ្មី ❤️',
-            note: 'រូបភាពដែលទើបបន្ថែម។'
+            date: 'New · image35',
+            caption: 'New Photo ❤️',
+            note: 'Recently added photo.'
         },
         {
             image: 'assets/images/image36.png',
-            date: 'ថ្មី · image36',
-            caption: 'រូបភាពថ្មី ❤️',
-            note: 'រូបភាពដែលទើបបន្ថែម។'
+            date: 'New · image36',
+            caption: 'New Photo ❤️',
+            note: 'Recently added photo.'
         },
         {
             image: 'assets/images/image37.png',
-            date: 'ថ្មី · image37',
-            caption: 'រូបភាពថ្មី ❤️',
-            note: 'រូបភាពដែលទើបបន្ថែម។'
+            date: 'New · image37',
+            caption: 'New Photo ❤️',
+            note: 'Recently added photo.'
         },
         {
             image: 'assets/images/image38.png',
-            date: 'ថ្មី · image38',
-            caption: 'រូបភាពថ្មី ❤️',
-            note: 'រូបភាពដែលទើបបន្ថែម។'
+            date: 'New · image38',
+            caption: 'New Photo ❤️',
+            note: 'Recently added photo.'
         },
         {
             image: 'assets/images/image39.png',
-            date: 'ថ្មី · image39',
-            caption: 'រូបភាពថ្មី ❤️',
-            note: 'រូបភាពដែលទើបបន្ថែម។'
+            date: 'New · image39',
+            caption: 'New Photo ❤️',
+            note: 'Recently added photo.'
         },
         {
             image: 'assets/images/image40.png',
-            date: 'ថ្មី · image40',
-            caption: 'រូបភាពថ្មី ❤️',
-            note: 'រូបភាពដែលទើបបន្ថែម។'
+            date: 'New · image40',
+            caption: 'New Photo ❤️',
+            note: 'Recently added photo.'
         },
         {
             image: 'assets/images/image41.png',
-            date: 'ថ្មី · image41',
-            caption: 'រូបភាពថ្មី ❤️',
-            note: 'រូបភាពដែលទើបបន្ថែម។'
+            date: 'New · image41',
+            caption: 'New Photo ❤️',
+            note: 'Recently added photo.'
         },
         {
             image: 'assets/images/image42.png',
-            date: 'ថ្មី · image42',
-            caption: 'រូបភាពថ្មី ❤️',
-            note: 'រូបភាពដែលទើបបន្ថែម។'
+            date: 'New · image42',
+            caption: 'New Photo ❤️',
+            note: 'Recently added photo.'
         },
         {
             image: 'assets/images/image43.png',
-            date: 'ថ្មី · image43',
-            caption: 'រូបភាពថ្មី ❤️',
-            note: 'រូបភាពដែលទើបបន្ថែម។'
+            date: 'New · image43',
+            caption: 'New Photo ❤️',
+            note: 'Recently added photo.'
         },
         {
             image: 'assets/images/image44.png',
-            date: 'ថ្មី · image44',
-            caption: 'រូបភាពថ្មី ❤️',
-            note: 'រូបភាពដែលទើបបន្ថែម។'
+            date: 'New · image44',
+            caption: 'New Photo ❤️',
+            note: 'Recently added photo.'
         },
         {
             image: 'assets/images/image46.png',
-            date: 'ថ្មី · image46',
-            caption: 'រូបភាពថ្មី ❤️',
-            note: 'រូបភាពដែលទើបបន្ថែម។'
+            date: 'New · image46',
+            caption: 'New Photo ❤️',
+            note: 'Recently added photo.'
         },
         {
             image: 'assets/images/image47.png',
-            date: 'ថ្មី · image47',
-            caption: 'រូបភាពថ្មី ❤️',
-            note: 'រូបភាពដែលទើបបន្ថែម។'
+            date: 'New · image47',
+            caption: 'New Photo ❤️',
+            note: 'Recently added photo.'
         },
         {
             image: 'assets/images/image48.png',
-            date: 'ថ្មី · image48',
-            caption: 'រូបភាពថ្មី ❤️',
-            note: 'រូបភាពដែលទើបបន្ថែម។'
+            date: 'New · image48',
+            caption: 'New Photo ❤️',
+            note: 'Recently added photo.'
         },
         {
             image: 'assets/images/image49.png',
-            date: 'ថ្មី · image49',
-            caption: 'រូបភាពថ្មី ❤️',
-            note: 'រូបភាពដែលទើបបន្ថែម។'
+            date: 'New · image49',
+            caption: 'New Photo ❤️',
+            note: 'Recently added photo.'
         },
         {
             image: 'assets/images/image50.png',
-            date: 'ថ្មី · image50',
-            caption: 'រូបភាពថ្មី ❤️',
-            note: 'រូបភាពដែលទើបបន្ថែម។'
+            date: 'New · image50',
+            caption: 'New Photo ❤️',
+            note: 'Recently added photo.'
         },
         {
             image: 'assets/images/image51.png',
-            date: 'ថ្មី · image51',
-            caption: 'រូបភាពថ្មី ❤️',
-            note: 'រូបភាពដែលទើបបន្ថែម។'
+            date: 'New · image51',
+            caption: 'New Photo ❤️',
+            note: 'Recently added photo.'
         },
         {
             image: 'assets/images/image52.png',
-            date: 'ថ្មី · image52',
-            caption: 'រូបភាពថ្មី ❤️',
-            note: 'រូបភាពដែលទើបបន្ថែម។'
+            date: 'New · image52',
+            caption: 'New Photo ❤️',
+            note: 'Recently added photo.'
         },
         {
             image: 'assets/images/image53.png',
-            date: 'ថ្មី · image53',
-            caption: 'រូបភាពថ្មី ❤️',
-            note: 'រូបភាពដែលទើបបន្ថែម។'
+            date: 'New · image53',
+            caption: 'New Photo ❤️',
+            note: 'Recently added photo.'
         },
         {
             image: 'assets/images/image54.png',
-            date: 'ថ្មី · image54',
-            caption: 'រូបភាពថ្មី ❤️',
-            note: 'រូបភាពដែលទើបបន្ថែម។'
+            date: 'New · image54',
+            caption: 'New Photo ❤️',
+            note: 'Recently added photo.'
         },
         {
             image: 'assets/images/image55.png',
-            date: 'ថ្មី · image55',
-            caption: 'រូបភាពថ្មី ❤️',
-            note: 'រូបភាពដែលទើបបន្ថែម។'
+            date: 'New · image55',
+            caption: 'New Photo ❤️',
+            note: 'Recently added photo.'
         },
         {
             image: 'assets/images/image56.png',
-            date: 'ថ្មី · image56',
-            caption: 'រូបភាពថ្មី ❤️',
-            note: 'រូបភាពដែលទើបបន្ថែម។'
+            date: 'New · image56',
+            caption: 'New Photo ❤️',
+            note: 'Recently added photo.'
         },
         {
             image: 'assets/images/image57.png',
-            date: 'ថ្មី · image57',
-            caption: 'រូបភាពថ្មី ❤️',
-            note: 'រូបភាពដែលទើបបន្ថែម។'
+            date: 'New · image57',
+            caption: 'New Photo ❤️',
+            note: 'Recently added photo.'
         },
     ],
 
     /* ---------- Journey timeline (May → August) ---------- */
     journey: {
-        heading: 'ដំណើររបស់យើងរួមគ្នា ❤️',
-        subtitle: 'ពីខែ ៥ ដល់ខែ ៨ — រាល់ខែមានអនុស្សាវរីយ៍ពិសេសរបស់យើង',
+        heading: 'Our Journey Together ❤️',
+        subtitle: 'From May to August — every month has special memories of us',
         items: [
             {
-                month: 'ខែ ៥ ឧសភា',
+                month: 'May',
                 emoji: '❤️',
                 image: 'assets/images/image2.png',
-                description: 'ចាប់ផ្តើមស្គាល់ និងទាក់ទងគ្នា ❤️'
+                description: 'Started getting to know each other and connected ❤️'
             },
             {
-                month: 'ខែ ៦ មិថុនា',
+                month: 'June',
                 emoji: '💕',
                 image: 'assets/images/image3.png',
-                description: 'ចាប់ផ្តើមស្គាល់គ្នាកាន់តែច្រើន និងបង្កើតអនុស្សាវរីយ៍ថ្មីៗ 💕'
+                description: 'Getting to know each other better and creating new memories 💕'
             },
             {
-                month: 'ខែ ៧ កក្កដា',
+                month: 'July',
                 emoji: '💗',
                 image: 'assets/images/image5.png',
-                description: 'ទំនាក់ទំនងកាន់តែជិតស្និទ្ធ និងមានពេលវេលាពិសេសជាមួយគ្នា 💗'
+                description: 'Getting closer and sharing special moments together 💗'
             },
             {
-                month: 'ខែ ៨ សីហា',
+                month: 'August',
                 emoji: '💖',
                 image: 'assets/images/image6.png',
-                description: 'បន្តបង្កើតអនុស្សាវរីយ៍ល្អៗ និងរក្សាទុកពេលវេលាពិសេសជាមួយគ្នា 💖'
+                description: 'Continuing to make beautiful memories and cherish special times together 💖'
             }
         ]
     }
@@ -432,7 +432,7 @@ function initConfig() {
     if (sinceDate) {
         const d = new Date(`${loveConfig.startDate}T00:00:00`);
         if (!isNaN(d.getTime())) {
-            sinceDate.textContent = d.toLocaleDateString('km-KH', {
+            sinceDate.textContent = d.toLocaleDateString('en-US', {
                 year: 'numeric', month: 'long', day: 'numeric'
             });
         }
@@ -451,7 +451,7 @@ function initNav() {
     const updateAria = () => {
         const isOpen = menu.classList.contains('is-open');
         toggle.setAttribute('aria-expanded', String(isOpen));
-        toggle.setAttribute('aria-label', isOpen ? 'បិទម៉ឺនុយ' : 'បើកម៉ឺនុយ');
+        toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
     };
 
     toggle.addEventListener('click', () => {
@@ -681,7 +681,7 @@ function initGallery() {
         card.className = 'gallery__card';
         card.setAttribute('role', 'button');
         card.setAttribute('tabindex', '0');
-        card.setAttribute('aria-label', `បើករូបភាព៖ ${memory.caption}`);
+        card.setAttribute('aria-label', `Open photo: ${memory.caption}`);
 
         // media wrapper
         const media = document.createElement('div');
