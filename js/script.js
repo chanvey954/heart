@@ -969,17 +969,19 @@ function initMiniBook() {
         }
     }
 
-    book.addEventListener('click', (e) => {
+    book.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
         const rect = book.getBoundingClientRect();
-        if (e.clientX - rect.left < rect.width / 2) {
+        const x = e.clientX - rect.left;
+        if (x < rect.width / 2) {
             flipPrev();
         } else {
             flipNext();
         }
     });
 
-    document.addEventListener('keydown', (e) => {
-        if (!book.closest('.section--story')) return;
+    document.addEventListener('keydown', function(e) {
         if (e.key === 'ArrowRight' || e.key === ' ') {
             e.preventDefault();
             flipNext();
@@ -989,13 +991,13 @@ function initMiniBook() {
         }
     });
 
-    let touchX = 0;
-    book.addEventListener('touchstart', (e) => {
+    var touchX = 0;
+    book.addEventListener('touchstart', function(e) {
         touchX = e.changedTouches[0].screenX;
     }, { passive: true });
 
-    book.addEventListener('touchend', (e) => {
-        const diff = touchX - e.changedTouches[0].screenX;
+    book.addEventListener('touchend', function(e) {
+        var diff = touchX - e.changedTouches[0].screenX;
         if (Math.abs(diff) > 40) {
             diff > 0 ? flipNext() : flipPrev();
         }
