@@ -1,6 +1,6 @@
 /* ============================================================
    FLIPBOOK — Love Story Book
-   Page flip animation with keyboard support
+   Click the book to flip pages
    ============================================================ */
 
 'use strict';
@@ -8,27 +8,15 @@
 document.addEventListener('DOMContentLoaded', () => {
     const book = document.getElementById('book');
     const pages = document.querySelectorAll('.page');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const currentPageEl = document.getElementById('currentPage');
-    const totalPagesEl = document.getElementById('totalPages');
     const heartsBg = document.getElementById('heartsBg');
 
     let currentPage = 0;
     const totalPages = pages.length;
 
-    function updateDisplay() {
-        currentPageEl.textContent = currentPage + 1;
-        totalPagesEl.textContent = totalPages;
-        prevBtn.disabled = currentPage === 0;
-        nextBtn.disabled = currentPage >= totalPages;
-    }
-
     function flipNext() {
         if (currentPage < totalPages) {
             pages[currentPage].classList.add('flipped');
             currentPage++;
-            updateDisplay();
         }
     }
 
@@ -36,34 +24,22 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentPage > 0) {
             currentPage--;
             pages[currentPage].classList.remove('flipped');
-            updateDisplay();
         }
     }
 
-    prevBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        flipPrev();
-    });
-
-    nextBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        flipNext();
-    });
-
-    /* ---------- Click anywhere on the book ---------- */
+    /* Click on book: left half = prev, right half = next */
     book.addEventListener('click', (e) => {
         const rect = book.getBoundingClientRect();
         const clickX = e.clientX - rect.left;
-        const halfWidth = rect.width / 2;
 
-        if (clickX < halfWidth) {
+        if (clickX < rect.width / 2) {
             flipPrev();
         } else {
             flipNext();
         }
     });
 
-    /* ---------- Keyboard ---------- */
+    /* Keyboard */
     document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowRight' || e.key === ' ') {
             e.preventDefault();
@@ -74,9 +50,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    updateDisplay();
+    /* Touch swipe */
+    let touchStartX = 0;
 
-    /* ---------- Floating hearts ---------- */
+    book.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    book.addEventListener('touchend', (e) => {
+        const diff = touchStartX - e.changedTouches[0].screenX;
+        if (Math.abs(diff) > 50) {
+            diff > 0 ? flipNext() : flipPrev();
+        }
+    }, { passive: true });
+
+    /* Floating hearts */
     function createHeart() {
         const heart = document.createElement('span');
         heart.className = 'heart';
@@ -93,18 +81,4 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(createHeart, i * 300);
     }
     setInterval(createHeart, 1200);
-
-    /* ---------- Touch swipe ---------- */
-    let touchStartX = 0;
-
-    book.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-
-    book.addEventListener('touchend', (e) => {
-        const diff = touchStartX - e.changedTouches[0].screenX;
-        if (Math.abs(diff) > 50) {
-            diff > 0 ? flipNext() : flipPrev();
-        }
-    }, { passive: true });
 });
