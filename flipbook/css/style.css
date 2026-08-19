@@ -313,11 +313,22 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 40px 35px;
+    justify-content: flex-start;
+    padding: 30px 30px 20px;
     text-align: center;
     position: relative;
     z-index: 2;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) transparent;
+}
+
+.page-content::-webkit-scrollbar {
+    width: 4px;
+}
+.page-content::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 2px;
 }
 
 /* ---------- 9. COVER PAGE ---------- */
@@ -342,14 +353,14 @@ body {
 }
 
 .cover-hearts {
-    font-size: 3rem;
-    margin-bottom: 15px;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
     animation: pulse 2s ease-in-out infinite;
 }
 
 .cover-title {
     font-family: var(--font-script);
-    font-size: 3rem;
+    font-size: 2.4rem;
     background: var(--grad-text);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -406,49 +417,49 @@ body {
 }
 
 .page-emoji {
-    font-size: 2.2rem;
-    margin-bottom: 10px;
+    font-size: 2rem;
+    margin-bottom: 6px;
 }
 
 .page-heading {
     font-family: var(--font-script);
-    font-size: 2rem;
+    font-size: 1.7rem;
     color: var(--primary-deep);
-    margin-bottom: 4px;
+    margin-bottom: 2px;
 }
 
 .page-subtitle {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--text-faint);
     font-style: italic;
     margin-bottom: 2px;
 }
 
 .page-divider {
-    width: 50px;
+    width: 40px;
     height: 2px;
     background: var(--grad-rose);
     border-radius: 2px;
-    margin: 8px 0;
+    margin: 5px 0;
 }
 
 .page-text {
-    font-size: 0.88rem;
+    font-size: 0.82rem;
     color: var(--text-soft);
-    line-height: 1.7;
+    line-height: 1.6;
     max-width: 330px;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
 }
 
 .page-quote {
-    margin-top: 12px;
-    padding: 10px 16px;
+    margin-top: 8px;
+    padding: 8px 14px;
     background: rgba(248, 187, 208, 0.12);
     border-radius: var(--radius);
     border-left: 3px solid var(--primary);
     font-style: italic;
     color: var(--text-soft);
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     max-width: 310px;
 }
 
@@ -459,17 +470,17 @@ body {
 }
 
 .page-signature {
-    margin-top: 12px;
+    margin-top: 8px;
     font-family: var(--font-script);
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--primary-deep);
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
 .page-footer {
-    position: absolute;
-    bottom: 16px;
-    font-size: 0.72rem;
+    margin-top: auto;
+    padding-top: 6px;
+    font-size: 0.7rem;
     color: var(--text-faint);
     letter-spacing: 0.05em;
 }
@@ -574,58 +585,59 @@ body {
 }
 
 .ending-hearts {
-    font-size: 3rem;
-    margin-bottom: 15px;
+    font-size: 2.2rem;
+    margin-bottom: 8px;
     animation: pulse 2s ease-in-out infinite;
 }
 
 .ending-title {
     font-family: var(--font-script);
-    font-size: 2.5rem;
+    font-size: 2rem;
     background: var(--grad-text);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
 }
 
 .ending-divider {
-    width: 80px;
-    height: 3px;
+    width: 50px;
+    height: 2px;
     background: var(--grad-rose);
     border-radius: 2px;
-    margin: 15px 0;
+    margin: 8px 0;
 }
 
 .ending-text {
-    font-size: 1.05rem;
+    font-size: 0.88rem;
     color: var(--text-soft);
-    line-height: 1.8;
-    max-width: 300px;
+    line-height: 1.6;
+    max-width: 310px;
+    margin-bottom: 4px;
 }
 
 .ending-names {
     display: flex;
     align-items: center;
-    gap: 15px;
-    margin-top: 25px;
+    gap: 10px;
+    margin-top: 12px;
 }
 
 .ending-name {
     font-family: var(--font-script);
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: var(--primary-deep);
 }
 
 .ending-heart {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     animation: pulse 1.5s ease-in-out infinite;
 }
 
 .ending-forever {
-    font-size: 4rem;
+    font-size: 2.5rem;
     color: var(--primary);
-    margin-top: 20px;
+    margin-top: 10px;
     opacity: 0.6;
 }
 
@@ -635,20 +647,20 @@ body {
 }
 
 .final-heart {
-    font-size: 4rem;
-    margin-bottom: 20px;
+    font-size: 3rem;
+    margin-bottom: 12px;
     animation: pulse 1.5s ease-in-out infinite;
 }
 
 .final-text {
     font-family: var(--font-script);
-    font-size: 2rem;
+    font-size: 1.6rem;
     color: var(--text);
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .final-subtext {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: var(--text-soft);
     font-style: italic;
 }
