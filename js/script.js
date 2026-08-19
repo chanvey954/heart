@@ -946,26 +946,31 @@ function initActiveNav() {
 }
 
 /* ============================================================
-   13. STORY BOOK (3D flipbook in Our Story section)
+   13. STORY BOOK (in Our Story section)
    ============================================================ */
 function initStoryBook() {
     var book = document.getElementById('storyBook');
     if (!book) return;
 
-    var pages = book.querySelectorAll('.page');
+    var pages = book.querySelectorAll('.book-page');
     var current = 0;
 
+    function showPage(index) {
+        pages.forEach(function(p) { p.classList.remove('book-page-active'); });
+        if (pages[index]) pages[index].classList.add('book-page-active');
+    }
+
     function flipNext() {
-        if (current < pages.length) {
-            pages[current].classList.add('flipped');
+        if (current < pages.length - 1) {
             current++;
+            showPage(current);
         }
     }
 
     function flipPrev() {
         if (current > 0) {
             current--;
-            pages[current].classList.remove('flipped');
+            showPage(current);
         }
     }
 
