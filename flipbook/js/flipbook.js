@@ -10,28 +10,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentPage = 0;
     const totalPages = pages.length;
+    const isMobile = window.innerWidth <= 480;
+
+    function updatePages() {
+        pages.forEach((p, i) => {
+            p.classList.remove('page-active', 'page-hidden');
+            if (i === currentPage) {
+                p.classList.add('page-active');
+                p.style.zIndex = 10;
+            } else if (i < currentPage) {
+                if (isMobile) {
+                    p.classList.add('flipped', 'page-hidden');
+                } else {
+                    p.classList.add('flipped');
+                }
+                p.style.zIndex = i;
+            } else {
+                p.classList.add('page-hidden');
+                p.style.zIndex = totalPages - i;
+            }
+        });
+    }
 
     function updateUI() {
-        counter.textContent = `${currentPage + 1} / ${totalPages}`;
+        counter.textContent = (currentPage + 1) + ' / ' + totalPages;
         prevBtn.disabled = currentPage === 0;
         prevBtn.style.opacity = currentPage === 0 ? '0.35' : '1';
+        prevBtn.style.pointerEvents = currentPage === 0 ? 'none' : '';
         nextBtn.disabled = currentPage >= totalPages - 1;
         nextBtn.style.opacity = currentPage >= totalPages - 1 ? '0.35' : '1';
+        nextBtn.style.pointerEvents = currentPage >= totalPages - 1 ? 'none' : '';
+    }
+
+    function showPage(index) {
+        if (index < 0 || index >= totalPages) return;
+        currentPage = index;
+        updatePages();
+        updateUI();
     }
 
     function flipNext() {
         if (currentPage < totalPages - 1) {
-            pages[currentPage].classList.add('flipped');
-            currentPage++;
-            updateUI();
+            showPage(currentPage + 1);
         }
     }
 
     function flipPrev() {
         if (currentPage > 0) {
-            currentPage--;
-            pages[currentPage].classList.remove('flipped');
-            updateUI();
+            showPage(currentPage - 1);
         }
     }
 
@@ -68,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function createHeart() {
         const heart = document.createElement('span');
         heart.className = 'heart';
-        heart.textContent = ['❤️', '💕', '💗', '💖', '💘', '🩷', '🤍'][Math.floor(Math.random() * 7)];
+        heart.textContent = ['\u2764\uFE0F', '\uD83D\uDC95', '\uD83D\uDC97', '\uD83D\uDC96', '\uD83D\uDC98', '\uD83E\uDE77', '\uD83E\uDD0D'][Math.floor(Math.random() * 7)];
         heart.style.left = Math.random() * 100 + '%';
         heart.style.fontSize = (12 + Math.random() * 16) + 'px';
         heart.style.setProperty('--dur', (8 + Math.random() * 10) + 's');
@@ -82,5 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     setInterval(createHeart, 1200);
 
+    updatePages();
     updateUI();
 });

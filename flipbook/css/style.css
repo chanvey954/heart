@@ -227,16 +227,27 @@ body {
     height: 100%;
     transform-origin: left center;
     transform-style: preserve-3d;
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
     cursor: pointer;
 }
 
-.page:hover:not(.flipped) {
+.page:hover:not(.flipped):not(.page-hidden) {
     transform: rotateY(-8deg);
 }
 
 .page.flipped {
     transform: rotateY(-180deg);
+    pointer-events: none;
+}
+
+.page.page-hidden {
+    opacity: 0;
+    pointer-events: none;
+    z-index: 0 !important;
+}
+
+.page.page-active {
+    z-index: 10;
 }
 
 .page .front,
@@ -731,10 +742,11 @@ body {
     .page {
         transform: none;
         transform-style: flat;
-        transition: opacity 0.4s ease;
+        transition: opacity 0.35s ease;
+        z-index: 0;
     }
-    
-    .page:hover:not(.flipped) {
+
+    .page:hover {
         transform: none;
     }
 
@@ -742,6 +754,22 @@ body {
         transform: none;
         opacity: 0;
         pointer-events: none;
+        z-index: 0 !important;
+    }
+
+    .page.page-active {
+        z-index: 10;
+        opacity: 1;
+    }
+
+    .page .front,
+    .page .back {
+        backface-visibility: visible;
+        transform: none;
+    }
+
+    .page .back {
+        display: none;
     }
 
     .page-content {
