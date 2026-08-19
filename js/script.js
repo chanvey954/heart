@@ -411,7 +411,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initCounter();
     initReveal();
     initActiveNav();
-    initStoryBook();
 });
 
 /* ============================================================
