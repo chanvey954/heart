@@ -17,14 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentPage = 0;
     const totalPages = pages.length;
 
-    // Update display
     function updateDisplay() {
         currentPageEl.textContent = currentPage + 1;
+        totalPagesEl.textContent = totalPages;
         prevBtn.disabled = currentPage === 0;
         nextBtn.disabled = currentPage >= totalPages;
     }
 
-    // Flip to next page
     function flipNext() {
         if (currentPage < totalPages) {
             pages[currentPage].classList.add('flipped');
@@ -33,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Flip to previous page
     function flipPrev() {
         if (currentPage > 0) {
             currentPage--;
@@ -42,22 +40,30 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Button click handlers
-    nextBtn.addEventListener('click', flipNext);
-    prevBtn.addEventListener('click', flipPrev);
-
-    // Click on page to flip
-    pages.forEach((page, index) => {
-        page.addEventListener('click', () => {
-            if (index === currentPage) {
-                flipNext();
-            } else if (index === currentPage - 1) {
-                flipPrev();
-            }
-        });
+    prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        flipPrev();
     });
 
-    // Keyboard navigation
+    nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        flipNext();
+    });
+
+    /* ---------- Click anywhere on the book ---------- */
+    book.addEventListener('click', (e) => {
+        const rect = book.getBoundingClientRect();
+        const clickX = e.clientX - rect.left;
+        const halfWidth = rect.width / 2;
+
+        if (clickX < halfWidth) {
+            flipPrev();
+        } else {
+            flipNext();
+        }
+    });
+
+    /* ---------- Keyboard ---------- */
     document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowRight' || e.key === ' ') {
             e.preventDefault();
@@ -68,11 +74,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Initialize
-    totalPagesEl.textContent = totalPages;
     updateDisplay();
 
-    // Floating hearts background
+    /* ---------- Floating hearts ---------- */
     function createHeart() {
         const heart = document.createElement('span');
         heart.className = 'heart';
@@ -82,36 +86,25 @@ document.addEventListener('DOMContentLoaded', () => {
         heart.style.setProperty('--dur', (8 + Math.random() * 10) + 's');
         heart.style.animationDelay = Math.random() * 5 + 's';
         heartsBg.appendChild(heart);
-
         heart.addEventListener('animationend', () => heart.remove());
     }
 
-    // Spawn initial hearts
     for (let i = 0; i < 12; i++) {
         setTimeout(createHeart, i * 300);
     }
-
-    // Continuous hearts
     setInterval(createHeart, 1200);
 
-    // Touch swipe support
+    /* ---------- Touch swipe ---------- */
     let touchStartX = 0;
-    let touchEndX = 0;
 
     book.addEventListener('touchstart', (e) => {
         touchStartX = e.changedTouches[0].screenX;
     }, { passive: true });
 
     book.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        const diff = touchStartX - touchEndX;
-
+        const diff = touchStartX - e.changedTouches[0].screenX;
         if (Math.abs(diff) > 50) {
-            if (diff > 0) {
-                flipNext();
-            } else {
-                flipPrev();
-            }
+            diff > 0 ? flipNext() : flipPrev();
         }
     }, { passive: true });
 });
