@@ -335,6 +335,24 @@ const loveConfig = {
             caption: 'រូបភាពថ្មី ❤️',
             note: 'រូបភាពដែលទើបបន្ថែម។'
         },
+        {
+            image: 'assets/images/image55.png',
+            date: 'ថ្មី · image55',
+            caption: 'រូបភាពថ្មី ❤️',
+            note: 'រូបភាពដែលទើបបន្ថែម។'
+        },
+        {
+            image: 'assets/images/image56.png',
+            date: 'ថ្មី · image56',
+            caption: 'រូបភាពថ្មី ❤️',
+            note: 'រូបភាពដែលទើបបន្ថែម។'
+        },
+        {
+            image: 'assets/images/image57.png',
+            date: 'ថ្មី · image57',
+            caption: 'រូបភាពថ្មី ❤️',
+            note: 'រូបភាពដែលទើបបន្ថែម។'
+        },
     ],
 
     /* ---------- Journey timeline (May → August) ---------- */
